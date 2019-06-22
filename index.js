@@ -3,16 +3,17 @@ const selectedButtons = [];
 buttons.forEach(button => {
     button.id = buttons.indexOf(button) + 1;
     button.addEventListener('click', () => {
-        const icon = button.firstElementChild;
-        icon.classList.toggle('inactive');
-        button.classList.toggle('selected');
         const buttonClassList = Array.from(button.classList)
-        if (buttonClassList.includes('selected')) {
+        const icon = button.firstElementChild;
+        if (selectedButtons.length < 2 && !buttonClassList.includes('selected')) {
+            icon.classList.remove('inactive');
+            button.classList.add('selected');
             selectedButtons.push(parseInt(button.id));
-        } else {
-            selectedButtons.splice( selectedButtons.indexOf(parseInt(button.id)) , 1)
+        } else if (selectedButtons.length < 2 || buttonClassList.includes('selected')) {
+            icon.classList.add('inactive');
+            button.classList.remove('selected');
+            selectedButtons.splice( selectedButtons.indexOf(parseInt(button.id)) , 1);
         }
-        console.log(selectedButtons);
     });
 });
 
