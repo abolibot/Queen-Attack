@@ -64,7 +64,9 @@ i {
     border-radius: 20px;
     width: 100px;
     height: 40px;
-    border: 1px solid gray;
+    border: 2px double #6a4a2f;
+    background: #ffffff;
+    color: #6a4a2f;
 }
 
 .attack-path {
@@ -79,6 +81,10 @@ i {
     background: #28B463;
 }
 
-.disabled {
+.disabled, .btn-disabled {
     cursor: not-allowed;
+}
+
+.btn-disabled {
+    opacity: 0.5;
 }
