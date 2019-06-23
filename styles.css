@@ -2,10 +2,13 @@ h1 {
     text-align: center;
 }
   
-#board {
-    margin: 0 auto; 
-    border: 10px solid #6a4a2f;
+#board, #check-holder {
+    margin: 30px auto;
     width: 600px;
+}
+
+#board {
+    border: 10px solid #6a4a2f;
     height: 600px;
 }
   
@@ -20,11 +23,12 @@ button {
 
 .queen {
     background: inherit;
-    border: none;
+    border: 1px solid #714d38;
 }
 
 .queen:focus,
-.queen:active {
+.queen:active,
+#reset-btn, #check-btn {
     outline: none;
 }
 
@@ -44,4 +48,37 @@ i {
 
 .white {
     background: #efddb4;
+}
+
+#check-btn {
+    float: left;
+    margin-left: 80px;
+}
+
+#reset-btn {
+    float: right;
+    margin-right: 80px;
+}
+
+#reset-btn, #check-btn {
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid gray;
+}
+
+.attack-path {
+    background: #ECF0F1;
+}
+
+.under-attack {
+    background: #E74C3C;
+}
+
+.safe {
+    background: #28B463;
+}
+
+.disabled {
+    cursor: not-allowed;
 }
